@@ -39,11 +39,12 @@ function initUserInfo(){
         }
     })
 }
-function get(url, success){
+function get(url, data,success){
     $.ajax({
         type: "get",
         url: url,
         async: true,
+        data: data,
         dataType: 'json',
         xhrFields: {
             withCredentials: true
