@@ -2,9 +2,7 @@ function askVerifyCode(){
     get('http://localhost:8080/api/auth/verify-code',{
         email: $("#input-email").val()
     },function (data){
-        if(data.code === 200) {
-            window.location = "/login.html"
-        }else {
+        if(data.code !== 200) {
             alert(data.reason)
         }
     })
